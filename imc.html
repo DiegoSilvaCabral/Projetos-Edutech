@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IMC calculator</title>
+</head>
+<body>
+
+	<h1>calculadora IMC</h1>
+<script type="text/javascript">
+
+	function br() {
+		document.write("<br>");
+	}
+
+	function br2() {
+		document.write("<br><br>");
+	}
+
+	function dw(argument) {
+		document.write(argument);
+	}
+
+	var peso = 70; //x
+	var altura = 1.90; //x
+	var imc = peso / (altura * altura);
+
+	dw("Seu IMC (índice de massa corporal) é: " + Math.round (imc) );
+	br2();
+</script>
+
+	
+
+</body>
+</html>
+

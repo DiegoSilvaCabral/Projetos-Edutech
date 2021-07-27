@@ -1,0 +1,47 @@
+<meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>esquadro 2</title>
+</head>
+<body>
+<canvas width="1200" height="600"></canvas>
+<script type="text/javascript">
+	var tela = document.querySelector("canvas");
+	var lapis = tela.getContext("2d");
+
+	function esquadro (xa, ya, xc, yc, cor) {
+		lapis.fillStyle = cor;
+		lapis.beginPath();
+		lapis.moveTo(xa, ya);
+		lapis.lineTo(xa, yc);
+		lapis.lineTo(xc, yc);
+		lapis.fill();
+
+		lapis.beginPath();
+		lapis.fillStyle = 'white';
+		lapis.moveTo((6*xa + xc)/7, (9*ya + 5*yc)/14);
+        lapis.lineTo((6*xa + xc)/7, (ya + 6*yc)/7);
+        lapis.lineTo((5*xa + 9*xc)/14, (ya + 6*yc)/7);
+        lapis.fill();
+
+
+		
+	}
+
+	var jogador1 = parseInt(prompt("xa"));
+	xa = jogador1;
+	var jogador2 = parseInt(prompt("ya"));
+	ya = jogador2;
+	var jogador3 = parseInt(prompt("xc"));
+	xc = jogador3;
+	var jogador4 = parseInt(prompt("yc"));
+	yc = jogador4
+	cor = prompt("cor");
+
+
+
+	esquadro(xa, ya, xc, yc, cor);
+</script>
+</body>
+</html>

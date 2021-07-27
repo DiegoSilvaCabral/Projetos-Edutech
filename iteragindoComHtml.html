@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>interagindo com html</title>
+</head>
+<body>
+<p>com isso pode interagir melhor com o usuário.<br>veja o exemplo:</p>
+<button>clique aqui para rodar um programa</button>
+<script type="text/javascript">
+
+	var button = document.querySelector("button");
+	
+	function ola () {
+		alert("olá!");
+	}
+	button.onclick = ola;
+</script>
+<p>com isso você podera atribuir programas a funções do html.</p>
+<p>mas caso tenha mais de uma tag faz o seguinte:</p>
+<button onclick="teste();">botão 1</button>
+<button onclick="teste();">botão 2</button>
+<script type="text/javascript">
+	function teste() {
+		alert("funcionando")
+	}
+</script>
+</body>
+</html>

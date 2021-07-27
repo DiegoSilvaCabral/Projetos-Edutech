@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	function dw(argument) {
+		document.write(argument);
+	}
+
+	var familiares = parseInt(prompt("Quantos familiares tem em sua família?"));
+	var totalIdades = 0;
+	
+
+	for (var limitador = 1; limitador <= familiares; limitador++) {
+	
+	var idade = parseInt(prompt("Qual é a idade do familiar?"));
+	totalIdades = totalIdades + idade;
+
+}
+
+	var media = totalIdades = totalIdades / familiares;
+
+	dw("A média é de: " + Math.round(media));
+</script>

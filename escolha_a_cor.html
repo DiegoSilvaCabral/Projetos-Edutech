@@ -1,0 +1,51 @@
+<meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>escolha a cor que quer</title>
+</head>
+<body>
+<canvas width="1260" height="600"></canvas>
+<script type="text/javascript">
+	tela = document.querySelector("canvas");
+	lapis = tela.getContext("2d");
+
+	var player = prompt("escolha as cores entre azul, vermelho e amarelo.");
+	var azul = ["azul", "azul "];
+	var vermelho = ["vermelho", "vermelho "];
+	var amarelo = ["amarelo", "amarelo "];
+
+
+
+		for (var i = 0; i < azul.length; i++) {
+			if (player == azul[i]) {
+				lapis.fillStyle = 'blue';
+				lapis.fillRect(0, 200, 1260, 600);
+				
+			}
+		}
+		
+
+		for (var o = 0; o < vermelho.length; o++) {
+			if (player == vermelho[o]) {
+				lapis.fillStyle = 'red';
+				lapis.fillRect(0, 200, 1260, 600);
+				
+			}
+		}
+			
+		
+		for (var p = 0; p < amarelo.length; p++) {
+			if (player == amarelo[p]) {
+				lapis.fillStyle = 'yellow';
+				lapis.fillRect(0, 200, 1260, 600);
+				
+		}
+		}
+		
+	
+
+	
+</script>
+</body>
+</html>

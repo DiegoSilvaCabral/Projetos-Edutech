@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Converter texto para números</title>
+</head>
+<body>
+<h1>explicação</h1>
+<p> O comando prompt sempre irá receber o resultado como textp, porém o JS converte para um número automáticamente quando ele é dividido ou multiplicado. Mas se você tentar somar ele irá concatenar como se fosse um texto.</p>
+<br>
+<script type="text/javascript">
+	var A = prompt(" Insira um número");
+
+	document.write(" Veja um exemplo: " + 5 + A);
+
+	document.write("<br>");
+
+	document.write(" E agora veja esse: " + Math.round(5 / A));
+</script>
+<br>
+<p> Para resolver esse problema usamos o comando "parseInt()".</p>
+<script type="text/javascript">
+	var B = parseInt(prompt(" Insira outro número:"));
+	document.write("<br>");
+	document.write("veja o exemplo: ");
+	document.write(5 + B);
+</script>
+</body>
+</html>

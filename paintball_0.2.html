@@ -1,0 +1,138 @@
+<meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>paintball :D</title>
+</head>
+<body>
+<canvas width="1240" height="600"></canvas>
+<script type="text/javascript">
+
+	var tela = document.querySelector("canvas");
+	var pincel = tela.getContext('2d');
+
+	var cores = 'grey';
+	
+	 function square(x, y, tamanho, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, tamanho, tamanho)
+        pincel.fill();
+    }
+
+	pincel.fillStyle = 'grey'
+	pincel.fillRect(0, 0, 1240, 600);
+
+	square(0, 0, 100, "white");
+	square(0, 100, 100, "blue");
+	square(0, 200, 100, "red");
+	square(0, 300, 100, "purple");
+	square(0, 400, 100, "green");
+	square(0, 500, 100, "yellow");
+
+	var z = 10;
+
+	var onandoff = false;
+
+	tela.onmousemove = function cordenada() {
+		if (onandoff == true) {
+			var x = event.pageX - tela.offsetLeft;
+			var y = event.pageY - tela.offsetTop;
+		
+		if (event.shiftKey == true) {
+			z = z + 5;
+			if (z > 50) {
+				z = 50;
+			}
+		}
+
+		if (event.altKey == true) {
+			z = z - 5;
+			if (z < 10) {
+				z = 10;
+			}
+		}
+
+		pincel.fillStyle = cores;
+		pincel.beginPath();
+		pincel.arc(x, y, z, 0, 2 * 3.14);
+		pincel.fill();
+		}
+
+			if (x > 0 && x < 100 && y > 0 && y < 100) {
+				square(0, 0, 100, "white");
+			}
+			if (x > 0 && x < 100 && y > 100 && y < 200) {
+				square(0, 100, 100, "blue");
+			}
+			if (x > 0 && x < 100 && y > 200 && y < 300) {
+				square(0, 200, 100, "red");
+			}
+			if (x > 0 && x < 100 && y > 300 && y < 400) {
+				square(0, 300, 100, "purple");
+			}
+			if (x > 0 && x < 100 && y > 400 && y < 500) {
+				square(0, 400, 100, "green");
+			}
+			if (x > 0 && x < 100 && y > 500 && y < 600) {
+				square(0, 500, 100, "yellow");
+			}	
+	}
+
+	function cordenada2() {
+			var x = event.pageX - tela.offsetLeft;
+			var y = event.pageY - tela.offsetTop;
+		
+			if (event.shiftKey == true) {
+			z = z + 5;
+			if (z > 50) {
+				z = 50;
+			}
+			}
+
+			if (event.altKey == true) {
+			z = z - 5;
+			if (z < 10) {
+				z = 10;
+			}
+			}
+
+			if (x > 0 && x < 100 && y > 0 && y < 100) {
+				square(0, 0, 100, "white");
+				cores = "white";
+			}
+			if (x > 0 && x < 100 && y > 100 && y < 200) {
+				square(0, 100, 100, "blue");
+				cores = "blue";
+			}
+			if (x > 0 && x < 100 && y > 200 && y < 300) {
+				square(0, 200, 100, "red");
+				cores = "red";
+			}
+			if (x > 0 && x < 100 && y > 300 && y < 400) {
+				square(0, 300, 100, "purple");
+				cores = "purple";
+			}
+			if (x > 0 && x < 100 && y > 400 && y < 500) {
+				square(0, 400, 100, "green");
+				cores = "green";
+			}
+			if (x > 0 && x < 100 && y > 500 && y < 600) {
+				square(0, 500, 100, "yellow");
+				cores = "yellow"
+			}
+		}
+
+//imputs
+	tela.onclick = cordenada2;
+	tela.onmousedown = function () {
+		onandoff = true;
+	}
+	tela.onmouseup = function () {
+		onandoff = false;
+	}
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>desafio... denovo</title>
+</head>
+<body>
+<canvas width="1000" height="600"></canvas>
+<script type="text/javascript">
+
+	var tela = document.querySelector("canvas");
+	var mouse = tela.getContext("2d");
+
+
+	mouse.fillStyle = 'black';
+	mouse.fillRect(0, 0, 1000, 600);
+	var z = 10;
+
+	function cordenada () {
+		var x = event.pageX - tela.offsetLeft;
+		var y = event.pageY - tela.offsetTop;
+
+		if (event.shiftKey == true) {
+			z = z + 5;
+			if (z > 40) {
+				z = 40;
+			}
+		}
+
+		if (event.altKey == true) {
+			z = z - 5;
+			if (z < 10) {
+				z = 10;
+			}
+		}
+
+
+		mouse.fillStyle = 'white';
+		mouse.beginPath();
+		mouse.arc(x, y, z, 0, 2 * 3.14);
+		mouse.fill();
+
+	
+		console.log("x " + x + ", y " + y); 
+	}
+	
+	tela.onclick = cordenada;
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>reflexo</title>
+</head>
+<body>
+<canvas width="1200" height="600"></canvas>
+<script type="text/javascript">
+	var tela = document.querySelector('canvas');
+	var lapis = tela.getContext('2d');
+
+	lapis.fillStyle = 'white';
+	lapis.fillRect(0, 0, 1200, 600);
+
+	function circulo(x, y, raio) {
+		lapis.fillStyle = 'black';
+		lapis.beginPath();
+		lapis.arc(x, y, raio, 0, 2 * Math.PI);
+		lapis.fill();
+	}
+
+	function clear() {
+		lapis.clearRect(0, 0, 1200, 600);
+	}
+
+	var xx = 0;
+	var yy = 0;
+	var raio = 20;
+
+	function atl() {
+		clear();
+		var x = Math.round(Math.random() * 1200);
+		var y = Math.round(Math.random() * 600);
+		xx = x;
+		yy = y;
+		circulo(x, y, raio);
+		}
+		
+		var velocidade = parseInt(prompt("escolha o nível de velocidade de 0 a 3 (4 se você achar fácil)"));
+		var t = 125;
+		var array = [2000, 1500, 1000, 500, 250];
+		var array1 = [0, 1, 2, 3, 4];
+		for (var i = 0; i < array.length; i++) {
+			if (velocidade == array1[i]) {
+				t = array[i];
+				break;
+			}
+		}
+		setInterval(atl, t);
+
+	function hitbox(event) {
+			var xj = event.pageX - tela.offsetLeft;
+			var yj = event.pageY - tela.offsetTop;
+
+			if (xj > xx - raio && xj < xx + raio && yj > yy - raio && yj < yy + raio) {
+				alert("acertou!");
+			} 
+		}
+		
+		tela.onclick = hitbox;
+// por coencidência eu já tinha feito um programa que funciona de uma maneira bem parecida com a atividade proposta então eu só coloquei esse programa.
+</script>
+</body>
+</html>
